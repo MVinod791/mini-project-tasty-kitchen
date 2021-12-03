@@ -1,0 +1,85 @@
+.nav-header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background: #f8fafc;
+  height: 64px;
+}
+.logo-name-container {
+  display: flex;
+  align-items: center;
+}
+.kitchen-icon {
+  height: 39px;
+  width: 49px;
+  left: 2px;
+  top: 2px;
+  border-radius: 0px;
+}
+.taste-kitchen-heading {
+  color: #f7931e;
+  font-family: '"DM San' s;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  margin-left: 15px;
+}
+.nav-desktop-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1110px;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  flex: 1;
+  list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nav-menu-item {
+  font-family: 'Roboto';
+  text-decoration: none;
+  margin: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  list-style-type: none;
+}
+.nav-link {
+  text-decoration: none;
+}
+.home {
+  color: #f7931e;
+}
+.cart {
+  color: #334155;
+}
+
+.logout-desktop-btn {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #f7931e;
+  border: none;
+  border-radius: 8px;
+  margin-left: 14px;
+  cursor: pointer;
+  outline: none;
+}
