@@ -1,0 +1,11 @@
+.container {
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.slider-images {
+  height: 320px;
+  width: 100%;
+}
+.slick-slide img {
+  margin: auto;
+}

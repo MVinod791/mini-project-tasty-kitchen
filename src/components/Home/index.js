@@ -1,6 +1,9 @@
 import {Component} from 'react'
+import {withRouter} from 'react-router-dom'
+import Cookies from 'js-cookie'
 import Header from '../Header'
-
+import ReactSlider from '../ReactSlider'
+import AllRestaurantSection from '../AllRestaurantSection'
 import './index.css'
 
 class Home extends Component {
@@ -8,12 +11,11 @@ class Home extends Component {
     return (
       <>
         <Header />
-        <div className="home-container">
-          <div className="swiggy-banner-container">
-            <h1>banner</h1>
-          </div>
-          <div>
-            <h1>Welcome Home</h1>
+
+        <div className="app-container">
+          <div className="home-container">
+            <ReactSlider />
+            <AllRestaurantSection />
           </div>
         </div>
       </>
@@ -21,4 +23,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default withRouter(Home)
