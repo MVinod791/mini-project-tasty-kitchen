@@ -1,15 +1,21 @@
 import {Link, withRouter} from 'react-router-dom'
+import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
-  const {history} = props
+  const onClickLogout = () => {
+    const {history} = props
+    Cookies.remove('jwt_token')
+    history.replace('/login')
+  }
+
   return (
     <nav className="nav-header">
       <div className="nav-desktop-container">
         <div className="logo-name-container">
           <img
             src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967825/Frame_274_2x_lghjt2.png"
-            alt="icon"
+            alt="website logo"
             className="kitchen-icon"
           />
           <h1 className="taste-kitchen-heading">Tasty Kitchens</h1>
@@ -27,7 +33,11 @@ const Header = props => {
               </Link>
             </li>
           </ul>
-          <button type="button" className="logout-desktop-btn">
+          <button
+            type="button"
+            className="logout-desktop-btn"
+            onClick={onClickLogout}
+          >
             Logout
           </button>
         </div>
@@ -36,4 +46,4 @@ const Header = props => {
   )
 }
 
-export default Header
+export default withRouter(Header)

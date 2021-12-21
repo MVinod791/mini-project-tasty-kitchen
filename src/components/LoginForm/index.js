@@ -87,7 +87,7 @@ class LoginForm extends Component {
           <form className="form" onSubmit={this.onSubmitForm}>
             <img
               src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967825/Frame_274_2x_lghjt2.png"
-              alt="icon"
+              alt="website login"
               className="kitchen-icon"
             />
             <h1 className="taste-kitchen-heading">Tasty Kitchens</h1>

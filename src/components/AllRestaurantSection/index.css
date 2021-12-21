@@ -3,14 +3,20 @@
   justify-content: center;
 }
 .home-container {
-  max-width: 1100px;
-  width: 95%;
+  width: 80%;
+}
+@media screen and (min-width: 768px) {
+  .home-container {
+    width: 90%;
+    max-width: 1100px;
+  }
 }
 
 .all-restaurant-responsive-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 
 .restaurants-list {
@@ -26,6 +32,7 @@
     flex-wrap: wrap;
     padding-left: 0px;
     width: 80%;
+    max-width: 1100px;
   }
 }
 

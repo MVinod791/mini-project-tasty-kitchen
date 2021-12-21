@@ -31,7 +31,7 @@ const apiStatusConstants = {
 class AllRestaurantsSection extends Component {
   state = {
     restaurantsList: [],
-    activeOptionId: sortByOptions[1].id,
+    activeOptionId: sortByOptions[1].displayText,
     apiStatus: apiStatusConstants.initial,
     currentPage: 0,
     maxPage: 0,
@@ -46,9 +46,9 @@ class AllRestaurantsSection extends Component {
 
     const jwtToken = Cookies.get('jwt_token')
 
-    const {currentPage} = this.state
+    const {currentPage, activeOptionId} = this.state
     const offsetValue = currentPage * 9
-    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offsetValue}&limit=9`
+    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offsetValue}&limit=9&sort_by_rating=${activeOptionId}`
 
     const options = {
       headers: {
@@ -83,11 +83,19 @@ class AllRestaurantsSection extends Component {
     }
   }
 
+  changeSortby = activeOptionId => {
+    this.setState({activeOptionId}, this.getRestaurantData)
+  }
+
   renderRestaurantsView = () => {
-    const {restaurantsList} = this.state
+    const {restaurantsList, activeOptionId} = this.state
     return (
       <div>
-        <RestaurantHeader />
+        <RestaurantHeader
+          sortByOptions={sortByOptions}
+          activeOptionId={activeOptionId}
+          changeSortby={this.changeSortby}
+        />
         <hr className="line" />
         <ul className="restaurants-list">
           {restaurantsList.map(restaurant => (
