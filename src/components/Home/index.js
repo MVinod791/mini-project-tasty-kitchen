@@ -2,8 +2,9 @@ import {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Header from '../Header'
-import ReactSlider from '../ReactSlider'
+
 import AllRestaurantSection from '../AllRestaurantSection'
+import Footer from '../Footer'
 import './index.css'
 
 class Home extends Component {
@@ -11,13 +12,8 @@ class Home extends Component {
     return (
       <>
         <Header />
-
-        <div className="app-container">
-          <div className="home-container">
-            <ReactSlider />
-            <AllRestaurantSection />
-          </div>
-        </div>
+        <AllRestaurantSection />
+        <Footer />
       </>
     )
   }

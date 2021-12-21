@@ -4,9 +4,17 @@ import Slider from 'react-slick'
 
 import './index.css'
 
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inprogress: 'IN_PROGRESS',
+}
+
 class ReactSlider extends Component {
   state = {
     sliderImages: [],
+    apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
@@ -32,11 +40,14 @@ class ReactSlider extends Component {
         id: eachImage.id,
       }))
 
-      this.setState({sliderImages: updateImagesData})
+      this.setState({
+        sliderImages: updateImagesData,
+        apiStatus: apiStatusConstants.success,
+      })
     }
   }
 
-  render() {
+  renderSliderView = () => {
     const {sliderImages} = this.state
     const settings = {
       dots: true,
@@ -45,7 +56,7 @@ class ReactSlider extends Component {
       arrows: false,
     }
     return (
-      <div className="container">
+      <div className="image-container">
         <Slider {...settings}>
           {sliderImages.map(eachImage => (
             <div key={eachImage.id}>
@@ -59,6 +70,20 @@ class ReactSlider extends Component {
         </Slider>
       </div>
     )
+  }
+
+  renderAllImages = () => {
+    const {apiStatus} = this.state
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderSliderView()
+      default:
+        return null
+    }
+  }
+
+  render() {
+    return <div className="slider-container">{this.renderAllImages()}</div>
   }
 }
 

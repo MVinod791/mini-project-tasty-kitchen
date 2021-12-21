@@ -1,11 +1,8 @@
-.app-container {
+.sample-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
-.home-container {
-  width: 95%;
-  max-width: 1100px;
-}
+
 .swiggy-banner-container {
   height: 320px;
   width: 100%;

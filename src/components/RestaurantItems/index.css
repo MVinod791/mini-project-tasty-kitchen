@@ -1,11 +1,25 @@
-.restaurant-item-list {
+.link {
+  text-decoration: none;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.restaurant-item {
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant-item {
+    width: 250px;
+    margin-bottom: 10px;
+  }
 }
 
 .item-image {
-  height: 100px;
+  height: 110px;
   width: 160px;
   left: 165px;
   top: 216px;
@@ -13,19 +27,14 @@
 }
 .item-details-container {
   margin-left: 10px;
+  width: 150px;
 }
 .item-name {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
-
-  /* identical to box height, or 133% */
-
-  letter-spacing: 0.2px;
-
-  /* Light / blue-gray / 700 */
-
+  font-size: 16px;
+  line-height: 24px;
   color: #334155;
 }
 .item-type {
@@ -33,11 +42,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-
-  /* identical to box height, or 171% */
-
-  /* Light / blue-gray / 500 */
-
+  line-height: 10px;
   color: #64748b;
 }
 .rating-container {
@@ -45,18 +50,19 @@
   align-items: center;
   line-height: 0px;
 }
+.star {
+  height: 16px;
+  width: 16px;
+  border-radius: 0px;
+}
 .rating {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-
   display: flex;
   align-items: center;
   margin-left: 8px;
-
-  /* Light / blue-gray / 800 */
-
   color: #1e293b;
 }
 .total-reviews {
@@ -64,14 +70,8 @@
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-
-  /* identical to box height */
-
   margin-left: 8px;
   display: flex;
   align-items: center;
-
-  /* Light / blue-gray / 500 */
-
   color: #64748b;
 }
