@@ -1,0 +1,94 @@
+.footer-bg-container {
+  padding: 30px;
+  border-radius: 0px;
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+}
+.company-logo-name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo {
+  height: 39px;
+  width: 49px;
+  left: 2px;
+  top: 2px;
+  border-radius: 0px;
+}
+.footer-heading {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #ffffff;
+  margin-left: 10px;
+}
+.contact-description {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 16px;
+  /* or 133% */
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.contact-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.contact-icons {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  margin-left: 20px;
+}
+
+.pinterest {
+  border: none;
+  outline: none;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.twitter {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.facebook {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+}

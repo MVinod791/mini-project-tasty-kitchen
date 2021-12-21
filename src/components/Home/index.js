@@ -12,7 +12,9 @@ class Home extends Component {
     return (
       <>
         <Header />
+
         <AllRestaurantSection />
+
         <Footer />
       </>
     )

@@ -52,8 +52,9 @@ class ReactSlider extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 300,
+      speed: 2000,
       arrows: false,
+      autoplay: true,
     }
     return (
       <div className="image-container">
