@@ -1,0 +1,86 @@
+.food-item {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+.food-item-image {
+  height: 150px;
+  width: 255px;
+  left: 769px;
+  top: 552px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+.food-item-name {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+
+  letter-spacing: 0.2px;
+
+  color: #334155;
+}
+.food-item-cost {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .food-item-cost {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 0px;
+  }
+}
+.food-rating {
+  display: flex;
+  align-items: center;
+}
+.food-star {
+  color: #ffcc00;
+  height: 14px;
+  width: 14px;
+  border-radius: 0px;
+}
+.food-rating {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+  display: flex;
+  align-items: center;
+  color: #0a1f44;
+  margin-left: 5px;
+}
+.add-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 12px;
+  border: 2px solid #ffa412;
+  box-sizing: border-box;
+  border-radius: 8px;
+  order: 0;
+  flex-grow: 0;
+  background-color: transparent;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height, or 133% */
+  color: #ffa412;
+  outline: none;
+  cursor: pointer;
+}

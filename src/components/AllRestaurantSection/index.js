@@ -96,7 +96,7 @@ class AllRestaurantsSection extends Component {
           activeOptionId={activeOptionId}
           changeSortby={this.changeSortby}
         />
-        <hr className="line" />
+        <hr className="horizontal-line" />
         <ul className="restaurants-list">
           {restaurantsList.map(restaurant => (
             <RestaurantItems
@@ -111,12 +111,17 @@ class AllRestaurantsSection extends Component {
 
   renderFailureView = () => (
     <div className="restaurant-failure-view">
-      <h1 className="not-found-heading">Page Not Found</h1>
-      <p className="error-description">
+      <img
+        src="https://res.cloudinary.com/nsp/image/upload/v1635664104/tastyKitchens/error_1x_csgpog.png"
+        alt="restaurants failure"
+        className="restaurant-failure-img"
+      />
+      <h1 className="failure-not-found-heading">Page Not Found</h1>
+      <p className="failure-error-description">
         We are sorry, the page you requested could not be found.Please go back
         to the homepage
       </p>
-      <button type="button" className="home-button">
+      <button type="button" className="failure-home-button">
         Home
       </button>
     </div>
