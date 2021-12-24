@@ -2,7 +2,7 @@ import Header from '../Header'
 import CartListView from '../CartListView'
 
 import EmptyCartView from '../EmptyCartView'
-
+import Footer from '../Footer'
 import CartContext from '../../context/CartContext'
 import CartSummary from '../CartSummary'
 import './index.css'
@@ -26,6 +26,8 @@ const Cart = () => (
               </div>
             </div>
           )}
+
+          <Footer />
         </>
       )
     }}
