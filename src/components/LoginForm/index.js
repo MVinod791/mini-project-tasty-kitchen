@@ -82,7 +82,7 @@ class LoginForm extends Component {
   render() {
     const {showErrorMsg, errorMsg} = this.state
     return (
-      <div className="app-container">
+      <div className="login-app-container">
         <div className="login-form-container">
           <form className="form" onSubmit={this.onSubmitForm}>
             <img

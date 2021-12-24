@@ -174,6 +174,7 @@ class RestaurantDetails extends Component {
         <div className="restaurant-details-container">
           {this.renderRestaurantDetails()}
         </div>
+        <Footer />
       </>
     )
   }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0px;
 }
 .restaurant-banner-container {
   background-image: url('https://res.cloudinary.com/dw1fcsurf/image/upload/v1635652165/Tasty%20Kitchen/AddFood/Frame_279_sbqrjg.png');
@@ -145,7 +146,7 @@
   /* Light / blue-gray / 200 */
   color: #e2e8f0;
 }
-.line {
+.vertical-line {
   border-left: 1px solid #e2e8f0;
   margin-left: 16px;
   margin-right: 16px;
@@ -153,7 +154,7 @@
   height: 50px;
 }
 @media screen and (min-width: 768px) {
-  .line {
+  .vertical-line {
     border-left: 1px solid #e2e8f0;
     height: 50px;
     width: 1px;

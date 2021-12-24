@@ -170,7 +170,7 @@ class AllRestaurantsSection extends Component {
   render() {
     const {maxPage, currentPage} = this.state
     return (
-      <div className="app-container">
+      <div className="all-restaurant-section-container">
         <div className="home-container">
           <ReactSlider />
           <div className="all-restaurant-responsive-container">
