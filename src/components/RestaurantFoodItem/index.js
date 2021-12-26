@@ -1,12 +1,12 @@
 import {Component} from 'react'
 import {BiRupee} from 'react-icons/bi'
 import {AiFillStar} from 'react-icons/ai'
-import Counter from '../Counter'
+
 import CartContext from '../../context/CartContext'
 import './index.css'
 
 class RestaurantFoodItem extends Component {
-  state = {isClicked: false, quantity: 1}
+  state = {isClicked: false, quantity: 0}
 
   onDecrement = () => {
     const {quantity} = this.state
@@ -23,22 +23,39 @@ class RestaurantFoodItem extends Component {
     return (
       <CartContext.Consumer>
         {value => {
-          const {addCartItem} = value
+          const {
+            addCartItem,
+            incrementCartItemQuantity,
+            decrementCartItemQuantity,
+          } = value
 
           const {isClicked, quantity} = this.state
           const {foodDetails} = this.props
-          const {imageUrl, cost, name, rating} = foodDetails
+          const {imageUrl, cost, name, rating, id} = foodDetails
 
           const onClickAdd = () => {
             this.setState(
-              prevState => ({isClicked: !prevState.isClicked}),
-              addCartItem({...foodDetails, quantity}),
+              prevState => ({quantity: prevState.quantity + 1}),
+              addCartItem({...foodDetails, quantity: quantity + 1}),
             )
+          }
+
+          const onDecrement = () => {
+            decrementCartItemQuantity(id)
+            // const {quantity} = this.state
+            this.setState(prevState => ({quantity: prevState.quantity - 1}))
+          }
+
+          const onIncrement = () => {
+            incrementCartItemQuantity(id)
+            this.setState(prevState => ({
+              quantity: prevState.quantity + 1,
+            }))
           }
 
           return (
             <li className="food-item" testid="foodItem">
-              <img src={imageUrl} alt="" className="food-item-image" />
+              <img src={imageUrl} alt={name} className="food-item-image" />
               <div>
                 <h1 className="food-item-name">{name}</h1>
                 <p className="food-item-cost">
@@ -49,20 +66,24 @@ class RestaurantFoodItem extends Component {
                   <AiFillStar className="food-star" />
                   <p className="food-rating">{rating}</p>
                 </div>
-                {isClicked ? (
+                {quantity > 0 ? (
                   <div className="food-item-quantity-container">
                     <button
+                      testid="decrement-count"
                       type="button"
                       className="decrement-button"
-                      onClick={this.onDecrement}
+                      onClick={onDecrement}
                     >
                       -
                     </button>
-                    <p className="item-quantity">{quantity}</p>
+                    <p className="item-quantity-number" testid="active-count">
+                      {quantity}
+                    </p>
                     <button
+                      testid="increment-count"
                       type="button"
                       className="increment-button"
-                      onClick={this.onIncrement}
+                      onClick={onIncrement}
                     >
                       +
                     </button>

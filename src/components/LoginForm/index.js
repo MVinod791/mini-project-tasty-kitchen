@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 import './index.css'
 
 class LoginForm extends Component {
@@ -81,13 +82,17 @@ class LoginForm extends Component {
 
   render() {
     const {showErrorMsg, errorMsg} = this.state
+    const token = Cookies.get('jwt_token')
+    if (token !== undefined) {
+      return <Redirect to="/" />
+    }
     return (
       <div className="login-app-container">
         <div className="login-form-container">
           <form className="form" onSubmit={this.onSubmitForm}>
             <img
               src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967825/Frame_274_2x_lghjt2.png"
-              alt="website login"
+              alt="website logo"
               className="kitchen-icon"
             />
             <h1 className="taste-kitchen-heading">Tasty Kitchens</h1>

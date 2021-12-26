@@ -1,5 +1,7 @@
+import {Link, withRouter} from 'react-router-dom'
 import {BiRupee} from 'react-icons/bi'
 import CartContext from '../../context/CartContext'
+
 import './index.css'
 
 const CartSummary = () => (
@@ -19,12 +21,17 @@ const CartSummary = () => (
                 <BiRupee size={24} />
                 <span className="total-count-value">{total}/-</span>
               </h1>
-              <button type="button" className="place-order-btn mobile-btn">
-                Place Order
-              </button>
-              <button type="button" className="place-order-btn desktop-btn">
-                Place Order
-              </button>
+              <Link to="/payment" className="nav-link">
+                <button type="button" className="place-order-btn mobile-btn">
+                  Place Order
+                </button>
+              </Link>
+
+              <Link to="/payment" className="nav-link">
+                <button type="button" className="place-order-btn desktop-btn">
+                  Place Order
+                </button>
+              </Link>
             </div>
           </div>
         </>
@@ -32,4 +39,4 @@ const CartSummary = () => (
     }}
   </CartContext.Consumer>
 )
-export default CartSummary
+export default withRouter(CartSummary)

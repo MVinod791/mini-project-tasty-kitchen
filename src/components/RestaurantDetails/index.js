@@ -77,10 +77,10 @@ class RestaurantDetails extends Component {
       costForTwo,
       cuisine,
       imageUrl,
-      itemsCount,
+
       location,
       name,
-      opensAt,
+
       rating,
       reviewsCount,
       foodItems,

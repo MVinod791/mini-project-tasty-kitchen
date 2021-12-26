@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 import {AiOutlineLeftSquare, AiOutlineRightSquare} from 'react-icons/ai'
 import ReactSlider from '../ReactSlider'
 import RestaurantHeader from '../RestaurantHeader'
-import RestaurantItems from '../RestaurantItems'
+import RestaurantCard from '../RestaurantCard'
 
 import './index.css'
 
@@ -99,7 +99,7 @@ class AllRestaurantsSection extends Component {
         <hr className="horizontal-line" />
         <ul className="restaurants-list">
           {restaurantsList.map(restaurant => (
-            <RestaurantItems
+            <RestaurantCard
               restaurantItemData={restaurant}
               key={restaurant.id}
             />
@@ -128,7 +128,10 @@ class AllRestaurantsSection extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="restaurant-loader-container">
+    <div
+      className="restaurant-loader-container"
+      testid="restaurants-list-loader"
+    >
       <Loader type="Oval" color="#F7931E" height="50" width="50" />
     </div>
   )
@@ -179,16 +182,18 @@ class AllRestaurantsSection extends Component {
               <button
                 type="button"
                 className="navigate-buttons"
+                testid="pagination-left-button"
                 onClick={this.onClickLeftArrow}
               >
                 <AiOutlineLeftSquare size={32} />
               </button>
-              <span>
+              <span testid="active-page-number">
                 {currentPage + 1} of {maxPage}
               </span>
               <button
                 type="button"
                 className="navigate-buttons"
+                testid="pagination-right-button"
                 onClick={this.onClickRightArrow}
               >
                 <AiOutlineRightSquare size={32} />

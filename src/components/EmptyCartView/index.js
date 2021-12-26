@@ -7,9 +7,9 @@ const EmptyCartView = () => (
     <img
       src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1640345787/cooking_1_ddw5n7.png"
       className="cart-empty-image"
-      alt="cart empty"
+      alt="empty cart"
     />
-    <h1 className="cart-empty-heading">No Orders Yet!</h1>
+    <h1 className="cart-empty-heading">No Order Yet!</h1>
     <p className="cart-empty-para">
       Your cart is empty. Add something from the menu.
     </p>

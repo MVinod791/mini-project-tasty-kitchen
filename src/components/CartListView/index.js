@@ -7,10 +7,11 @@ import './index.css'
 const CartListView = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList} = value
+      const stringifiedCartList = localStorage.getItem('cartData')
+      const parsedCartList = JSON.parse(stringifiedCartList)
       return (
         <ul className="cart-list">
-          {cartList.map(eachCartItem => (
+          {parsedCartList.map(eachCartItem => (
             <CartItem key={eachCartItem.id} cartItemDetails={eachCartItem} />
           ))}
         </ul>

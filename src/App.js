@@ -9,6 +9,7 @@ import Home from './components/Home'
 import ProtectedRoute from './components/ProtectedRoute'
 import RestaurantDetails from './components/RestaurantDetails'
 import Cart from './components/Cart'
+import Payment from './components/Payment'
 import './App.css'
 
 class App extends Component {
@@ -67,6 +68,7 @@ class App extends Component {
 
   render() {
     const {cartList} = this.state
+    localStorage.setItem('cartData', JSON.stringify(cartList))
     return (
       <BrowserRouter>
         <CartContext.Provider
@@ -86,6 +88,7 @@ class App extends Component {
               component={RestaurantDetails}
             />
             <ProtectedRoute exact path="/cart" component={Cart} />
+            <ProtectedRoute exact path="/payment" component={Payment} />
           </Switch>
         </CartContext.Provider>
       </BrowserRouter>

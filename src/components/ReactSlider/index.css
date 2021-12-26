@@ -18,3 +18,20 @@
 .slick-slide img {
   margin: auto;
 }
+.slider-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.slider-failure-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+}
+.slider-failure-heading-text {
+  font-size: 16px;
+  color: #1e293b;
+}

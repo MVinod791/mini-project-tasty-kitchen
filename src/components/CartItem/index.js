@@ -9,7 +9,7 @@ const CartItem = props => (
       const {incrementCartItemQuantity, decrementCartItemQuantity} = value
 
       const {cartItemDetails} = props
-      const {title, name, quantity, cost, imageUrl, id} = cartItemDetails
+      const {name, quantity, cost, imageUrl, id} = cartItemDetails
 
       const onDecrementQuantity = () => {
         decrementCartItemQuantity(id)
@@ -20,22 +20,26 @@ const CartItem = props => (
       }
 
       return (
-        <li className="cart-item">
-          <img className="cart-product-image" src={imageUrl} alt={title} />
+        <li className="cart-item" testid="cartItem">
+          <img className="cart-product-image" src={imageUrl} alt={imageUrl} />
           <div className="cart-item-details-container">
             <dv className="cart-product-title-brand-container">
               <h1 className="cart-product-title">{name}</h1>
             </dv>
             <div className="cart-quantity-container">
               <button
+                testid="decrement-quantity"
                 type="button"
                 className="quantity-controller-button"
                 onClick={onDecrementQuantity}
               >
                 <BsDashSquare color="#52606D" size={16} />
               </button>
-              <p className="cart-quantity">{quantity}</p>
+              <p className="cart-quantity" testid="item-quantity">
+                {quantity}
+              </p>
               <button
+                testid="increment-quantity"
                 type="button"
                 className="quantity-controller-button"
                 onClick={OnIncrementQuantity}
@@ -45,7 +49,9 @@ const CartItem = props => (
             </div>
             <div className="total-price-delete-container">
               <BiRupee className="rupee-price" size={20} />
-              <p className="cart-total-price">{cost * quantity}/-</p>
+              <p className="cart-total-price" testid="total-price">
+                {cost * quantity}/-
+              </p>
             </div>
           </div>
         </li>
