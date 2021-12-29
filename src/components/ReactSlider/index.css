@@ -3,6 +3,10 @@
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  list-style-type: none;
+}
+.carousel {
+  width: 100%;
 }
 .image-container {
   width: 100%;
@@ -12,8 +16,13 @@
   border-radius: 8px;
 }
 .slider-images {
-  height: 320px;
+  height: 250px;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .slider-images {
+    height: 320px;
+  }
 }
 .slick-slide img {
   margin: auto;

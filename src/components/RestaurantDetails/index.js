@@ -117,7 +117,7 @@ class RestaurantDetails extends Component {
           </div>
         </div>
 
-        <ul className="food-item-list">
+        <ul className="food-item-list" testid="foodItem">
           {foodItems.map(eachFood => (
             <RestaurantFoodItem foodDetails={eachFood} key={eachFood.id} />
           ))}

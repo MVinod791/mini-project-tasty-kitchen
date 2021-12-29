@@ -6,18 +6,7 @@ import CartContext from '../../context/CartContext'
 import './index.css'
 
 class RestaurantFoodItem extends Component {
-  state = {isClicked: false, quantity: 0}
-
-  onDecrement = () => {
-    const {quantity} = this.state
-    if (quantity > 1) {
-      this.setState(prevState => ({quantity: prevState.quantity - 1}))
-    }
-  }
-
-  onIncrement = () => {
-    this.setState(prevState => ({quantity: prevState.quantity + 1}))
-  }
+  state = {quantity: 0}
 
   render() {
     return (
@@ -29,7 +18,7 @@ class RestaurantFoodItem extends Component {
             decrementCartItemQuantity,
           } = value
 
-          const {isClicked, quantity} = this.state
+          const {quantity} = this.state
           const {foodDetails} = this.props
           const {imageUrl, cost, name, rating, id} = foodDetails
 

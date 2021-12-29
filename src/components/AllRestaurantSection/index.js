@@ -90,7 +90,7 @@ class AllRestaurantsSection extends Component {
   renderRestaurantsView = () => {
     const {restaurantsList, activeOptionId} = this.state
     return (
-      <div>
+      <>
         <RestaurantHeader
           sortByOptions={sortByOptions}
           activeOptionId={activeOptionId}
@@ -105,7 +105,7 @@ class AllRestaurantsSection extends Component {
             />
           ))}
         </ul>
-      </div>
+      </>
     )
   }
 
@@ -185,18 +185,20 @@ class AllRestaurantsSection extends Component {
                 testid="pagination-left-button"
                 onClick={this.onClickLeftArrow}
               >
-                <AiOutlineLeftSquare size={32} />
+                <AiOutlineLeftSquare size={32} className="pagination" />
               </button>
-              <span testid="active-page-number">
-                {currentPage + 1} of {maxPage}
-              </span>
+              <p>
+                <span testid="active-page-number">{currentPage + 1}</span>
+                of
+                <span>{maxPage}</span>
+              </p>
               <button
                 type="button"
                 className="navigate-buttons"
                 testid="pagination-right-button"
                 onClick={this.onClickRightArrow}
               >
-                <AiOutlineRightSquare size={32} />
+                <AiOutlineRightSquare size={32} className="pagination" />
               </button>
             </div>
           </div>

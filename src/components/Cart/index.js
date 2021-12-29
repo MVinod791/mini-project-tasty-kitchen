@@ -4,7 +4,7 @@ import CartListView from '../CartListView'
 import EmptyCartView from '../EmptyCartView'
 import Footer from '../Footer'
 import CartContext from '../../context/CartContext'
-import CartSummary from '../CartSummary'
+
 import './index.css'
 
 const Cart = () => (
@@ -15,17 +15,7 @@ const Cart = () => (
       return (
         <>
           <Header />
-          {showEmptyView ? (
-            <EmptyCartView />
-          ) : (
-            <div className="cart-container">
-              <div className="cart-content-container">
-                <CartListView />
-                <hr className="cart-line" />
-                <CartSummary />
-              </div>
-            </div>
-          )}
+          {showEmptyView ? <EmptyCartView /> : <CartListView />}
 
           <Footer />
         </>

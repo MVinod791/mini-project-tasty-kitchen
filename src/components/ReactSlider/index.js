@@ -57,23 +57,28 @@ class ReactSlider extends Component {
       dots: true,
       infinite: true,
       speed: 2000,
+      slidesToShow: 1,
+
+      slidesToScroll: 1,
+
       arrows: false,
       autoplay: true,
+      autoplaySpeed: 2000,
     }
     return (
-      <div className="image-container">
-        <Slider {...settings}>
+      <ul className="image-container">
+        <Slider {...settings} className="carousel">
           {sliderImages.map(eachImage => (
-            <div key={eachImage.id}>
+            <li key={eachImage.id}>
               <img
                 src={eachImage.imageUrl}
-                alt="hi"
+                alt="offer"
                 className="slider-images"
               />
-            </div>
+            </li>
           ))}
         </Slider>
-      </div>
+      </ul>
     )
   }
 

@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import {Switch, Route, BrowserRouter, Redirect} from 'react-router-dom'
 
 import CartContext from './context/CartContext'
 
@@ -9,11 +9,26 @@ import Home from './components/Home'
 import ProtectedRoute from './components/ProtectedRoute'
 import RestaurantDetails from './components/RestaurantDetails'
 import Cart from './components/Cart'
-import Payment from './components/Payment'
+
+import NotFound from './components/NotFound'
+
 import './App.css'
 
+const getCartListFromLocalStorage = () => {
+  const stringifiedCartList = localStorage.getItem('cartData')
+  const parsedCartList = JSON.parse(stringifiedCartList)
+  if (parsedCartList === null) {
+    return []
+  }
+  return parsedCartList
+}
+
 class App extends Component {
-  state = {cartList: []}
+  state = {cartList: getCartListFromLocalStorage()}
+
+  removeAllCartItems = () => {
+    this.setState({cartList: []})
+  }
 
   addCartItem = food => {
     const {cartList} = this.state
@@ -63,7 +78,17 @@ class App extends Component {
           return eachCartItem
         }),
       }))
+    } else {
+      this.removeCartItem(id)
     }
+  }
+
+  removeCartItem = id => {
+    const {cartList} = this.state
+    const updatedCartList = cartList.filter(
+      eachCartItem => eachCartItem.id !== id,
+    )
+    this.setState({cartList: updatedCartList})
   }
 
   render() {
@@ -75,8 +100,10 @@ class App extends Component {
           value={{
             cartList,
             addCartItem: this.addCartItem,
+            removeCartItem: this.removeCartItem,
             incrementCartItemQuantity: this.incrementCartItemQuantity,
             decrementCartItemQuantity: this.decrementCartItemQuantity,
+            removeAllCartItems: this.removeAllCartItems,
           }}
         >
           <Switch>
@@ -88,7 +115,8 @@ class App extends Component {
               component={RestaurantDetails}
             />
             <ProtectedRoute exact path="/cart" component={Cart} />
-            <ProtectedRoute exact path="/payment" component={Payment} />
+            <Route path="/bad-path" component={NotFound} />
+            <Redirect to="/bad-path" />
           </Switch>
         </CartContext.Provider>
       </BrowserRouter>

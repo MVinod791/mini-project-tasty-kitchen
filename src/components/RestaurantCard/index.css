@@ -14,7 +14,7 @@
 
 @media screen and (min-width: 768px) {
   .restaurant-item {
-    width: 220px;
+    width: 350px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;

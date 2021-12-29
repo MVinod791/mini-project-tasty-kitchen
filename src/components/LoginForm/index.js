@@ -26,7 +26,7 @@ class LoginForm extends Component {
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(url, options)
-    console.log(response)
+
     const data = await response.json()
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
@@ -88,30 +88,34 @@ class LoginForm extends Component {
     }
     return (
       <div className="login-app-container">
+        <img
+          src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1640616796/Rectangle_1457_2x_ihnidr.png"
+          className="login-website-logo-mobile-image"
+          alt="website logo"
+        />
         <div className="login-form-container">
           <form className="form" onSubmit={this.onSubmitForm}>
             <img
               src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967825/Frame_274_2x_lghjt2.png"
               alt="website logo"
-              className="kitchen-icon"
+              className="login-website-logo-desktop-image"
             />
             <h1 className="taste-kitchen-heading">Tasty Kitchens</h1>
             <h1 className="heading">Login</h1>
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
-            {showErrorMsg && <p className="error-message">{errorMsg}</p>}
+            {showErrorMsg && <p className="error-message">*{errorMsg}</p>}
             <button type="submit" className="login-button">
               Login
             </button>
           </form>
         </div>
-        <div>
-          <img
-            src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967615/Rectangle_1456_eke7rc.png"
-            alt="kitchen"
-            className="bg-image"
-          />
-        </div>
+
+        <img
+          src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967615/Rectangle_1456_eke7rc.png"
+          alt="website login"
+          className="login-image"
+        />
       </div>
     )
   }

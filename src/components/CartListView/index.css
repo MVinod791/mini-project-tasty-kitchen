@@ -1,3 +1,64 @@
 .cart-list {
   padding-left: 0px;
 }
+.cart-headers-cont {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-headers-cont {
+    display: flex;
+
+    justify-content: space-between;
+    padding-left: 36px;
+    padding-top: 24px;
+    padding-bottom: 0px;
+    padding-right: 48px;
+  }
+}
+
+.cart-header-items {
+  text-align: center;
+  width: 10%;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #475569;
+}
+.qty-price-cont {
+  display: flex;
+  flex-direction: column;
+}
+.cart-header-qty {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #475569;
+  margin-left: 15px;
+}
+
+.cart-header-price {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #475569;
+  width: 25%;
+}
+
+@media screen and (min-width: 786px) {
+  .qty-price-cont {
+    flex-direction: row;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+}

@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {withRouter} from 'react-router-dom'
-import Cookies from 'js-cookie'
+
 import Header from '../Header'
 
 import AllRestaurantSection from '../AllRestaurantSection'

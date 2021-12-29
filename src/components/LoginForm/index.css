@@ -1,58 +1,71 @@
 .login-app-container {
   display: flex;
-  justify-content: space-between;
-  position: relative;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
   width: 100%;
-  margin: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .login-app-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.login-website-logo-mobile-image {
+  width: 380px;
+  height: 380px;
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 992px) {
+  .login-website-logo-mobile-image {
+    display: none;
+  }
 }
 
 .login-form-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 80%;
-  max-width: 1110px;
-  margin: auto;
 }
 @media screen and (min-width: 768px) {
   .login-form-container {
-    width: 95%;
-    max-width: 1200px;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 60%;
   }
 }
 .form {
-  height: 523px;
-  width: 456px;
-  max-width: 500px;
-  left: 165px;
-  top: 250px;
-  border-radius: 8px;
-  box-shadow: 0px 8px 40px 0px #07070714;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  width: 100%;
+  padding-bottom: 20px;
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 798px) {
   .form {
-    max-width: 500px;
+    width: 456px;
+
     flex-shrink: 0;
     padding: 64px 48px 64px 48px;
+
+    box-shadow: 0px 8px 40px 0px #07070714;
   }
 }
 
-.kitchen-icon {
+.login-website-logo-desktop-image {
   height: 39px;
   width: 49px;
-  left: 2px;
-  top: 2px;
-  border-radius: 0px;
+}
+@media screen and (max-width: 991px) {
+  .login-website-logo-desktop-image {
+    display: none;
+  }
 }
 .taste-kitchen-heading {
   color: #f7931e;
@@ -63,6 +76,12 @@
   line-height: 32px;
 }
 
+@media screen and (max-width: 992px) {
+  .taste-kitchen-heading {
+    display: none;
+  }
+}
+
 .heading {
   font-family: 'DM Sans';
   font-style: normal;
@@ -71,6 +90,16 @@
   font-size: 32px;
   line-height: 40px;
   color: #0f172a;
+}
+
+@media screen and (max-width: 992px) {
+  .heading {
+    text-align: left;
+    align-self: flex-start;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+  }
 }
 
 .input-container {
@@ -100,9 +129,7 @@
   border: none;
   padding: 8px 16px 8px 16px;
   height: 40px;
-  width: 360px;
-  left: 0px;
-  top: 24px;
+
   border-radius: 2px;
 }
 .password-input-field {
@@ -114,26 +141,29 @@
   border: none;
   padding: 8px 16px 8px 16px;
   height: 40px;
-  width: 360px;
-  left: 0px;
-  top: 24px;
+
   border-radius: 2px;
   margin-bottom: 5px;
 }
-.bg-image {
-  height: 690px;
-  width: 650px;
-  left: 735px;
-  top: 0px;
-  border-radius: 0px;
+@media screen and (max-width: 768px) {
+  .login-image {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .login-image {
+    width: 40%;
+    flex-shrink: 1;
+    height: 100vh;
+    display: block;
+  }
 }
 .login-button {
   height: 44px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 2px;
-  left: 0px;
-  top: 0px;
+
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: bold;
@@ -142,7 +172,7 @@
   background-color: #f7931e;
   color: #ffffff;
   border-radius: 8px;
-  padding: 8px 16px 8px 16px;
+
   border: none;
   outline: none;
   cursor: pointer;
