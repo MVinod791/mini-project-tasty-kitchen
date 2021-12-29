@@ -23,15 +23,11 @@ const CartItem = props => (
         <li className="cart-item" testid="cartItem">
           <div className="cart-item-info" testid="cartItem">
             <img className="cart-product-image" src={imageUrl} alt={name} />
-            <h1 className="cart-item-desktop-name" testid="cartItem">
-              {name}
-            </h1>
+            <h1 className="cart-item-desktop-name">{name}</h1>
           </div>
 
           <div className="cart-item-details-container" testid="cartItem">
-            <h1 className="cart-item-mobile-name" testid="cartItem">
-              {name}
-            </h1>
+            <h1 className="cart-item-mobile-name">{name}</h1>
 
             <div className="cart-quantity-container">
               <button
@@ -57,7 +53,7 @@ const CartItem = props => (
             <div className="total-price-delete-container">
               <BiRupee className="rupee-price" size={20} />
               <p className="cart-total-price" testid="total-price">
-                {cost * quantity}.00
+                {cost * quantity}
               </p>
             </div>
           </div>
