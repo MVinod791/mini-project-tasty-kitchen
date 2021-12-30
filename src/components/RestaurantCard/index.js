@@ -14,11 +14,11 @@ const RestaurantCard = props => {
     totalReviews,
   } = restaurantItemData
   return (
-    <li className="restaurant-item" testid="restaurant-item">
-      <Link to={`/restaurant/${id}`} className="link">
-        <img src={imageUrl} alt="restaurant" className="item-image" />
+    <Link to={`/restaurant/${id}`} className="link">
+      <li className="restaurant-item" testid="restaurant-item">
+        <img src={imageUrl} alt="website logo" className="item-image" />
         <div className="item-details-container">
-          <p className="item-name">{name}</p>
+          <h1 className="item-name">{name}</h1>
           <p className="item-type">{cuisine}</p>
           <div className="rating-container">
             <AiFillStar className="star" style={{color: `${ratingColor}`}} />
@@ -26,8 +26,8 @@ const RestaurantCard = props => {
             <p className="total-reviews">({totalReviews} reviews)</p>
           </div>
         </div>
-      </Link>
-    </li>
+      </li>
+    </Link>
   )
 }
 export default RestaurantCard

@@ -31,7 +31,7 @@ const apiStatusConstants = {
 class AllRestaurantsSection extends Component {
   state = {
     restaurantsList: [],
-    activeOptionId: sortByOptions[1].displayText,
+    activeOptionId: sortByOptions[1].value,
     apiStatus: apiStatusConstants.initial,
     currentPage: 0,
     maxPage: 0,
@@ -83,8 +83,8 @@ class AllRestaurantsSection extends Component {
     }
   }
 
-  changeSortby = activeOptionId => {
-    this.setState({activeOptionId}, this.getRestaurantData)
+  changeSortBy = option => {
+    this.setState({activeOptionId: option}, this.getRestaurantData)
   }
 
   renderRestaurantsView = () => {
@@ -94,7 +94,7 @@ class AllRestaurantsSection extends Component {
         <RestaurantHeader
           sortByOptions={sortByOptions}
           activeOptionId={activeOptionId}
-          changeSortby={this.changeSortby}
+          changeSortBy={this.changeSortBy}
         />
         <hr className="horizontal-line" />
         <ul className="restaurants-list">

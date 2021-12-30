@@ -149,6 +149,19 @@
 .total-price-delete-container {
   display: flex;
   align-items: center;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #ffa412;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 100px;
+  margin-left: 6px;
+  width: 25%;
 }
 
 .rupee-price {

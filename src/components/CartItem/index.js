@@ -50,12 +50,10 @@ const CartItem = props => (
                 <BsPlusSquare color="#52606D" size={16} />
               </button>
             </div>
-            <div className="total-price-delete-container">
+            <p className="total-price-delete-container" testid="total-price">
               <BiRupee className="rupee-price" size={20} />
-              <p className="cart-total-price" testid="total-price">
-                {cost * quantity}
-              </p>
-            </div>
+              {cost * quantity}
+            </p>
           </div>
         </li>
       )
