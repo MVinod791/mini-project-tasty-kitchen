@@ -1,7 +1,9 @@
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {AiOutlineLeftSquare, AiOutlineRightSquare} from 'react-icons/ai'
+import {BsSearch} from 'react-icons/bs'
 import ReactSlider from '../ReactSlider'
 import RestaurantHeader from '../RestaurantHeader'
 import RestaurantCard from '../RestaurantCard'
@@ -35,6 +37,7 @@ class AllRestaurantsSection extends Component {
     apiStatus: apiStatusConstants.initial,
     currentPage: 0,
     maxPage: 0,
+    searchInput: '',
   }
 
   componentDidMount() {
@@ -46,9 +49,9 @@ class AllRestaurantsSection extends Component {
 
     const jwtToken = Cookies.get('jwt_token')
 
-    const {currentPage, activeOptionId} = this.state
+    const {currentPage, activeOptionId, searchInput} = this.state
     const offsetValue = currentPage * 9
-    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offsetValue}&limit=9&sort_by_rating=${activeOptionId}`
+    const apiUrl = `https://apis.ccbp.in/restaurants-list?offset=${offsetValue}&limit=9&sort_by_rating=${activeOptionId}&search=${searchInput.toLowerCase()}`
 
     const options = {
       headers: {
@@ -87,6 +90,37 @@ class AllRestaurantsSection extends Component {
     this.setState({activeOptionId: option}, this.getRestaurantData)
   }
 
+  onChangeSearchInput = event => {
+    const {value} = event.target
+    this.setState({searchInput: value})
+  }
+
+  onClickSearchResult = () => {
+    this.getRestaurantData()
+  }
+
+  renderSearchInput = () => {
+    const {searchInput} = this.state
+    return (
+      <div className="search-container">
+        <input
+          type="search"
+          placeholder="search"
+          className="search-input"
+          value={searchInput}
+          onChange={this.onChangeSearchInput}
+        />
+        <button
+          type="button"
+          className="search-button"
+          onClick={this.onClickSearchResult}
+        >
+          <BsSearch />
+        </button>
+      </div>
+    )
+  }
+
   renderRestaurantsView = () => {
     const {restaurantsList, activeOptionId} = this.state
     return (
@@ -97,6 +131,7 @@ class AllRestaurantsSection extends Component {
           changeSortBy={this.changeSortBy}
         />
         <hr className="horizontal-line" />
+        {this.renderSearchInput()}
         <ul className="restaurants-list">
           {restaurantsList.map(restaurant => (
             <RestaurantCard
@@ -121,7 +156,12 @@ class AllRestaurantsSection extends Component {
         We are sorry, the page you requested could not be found.Please go back
         to the homepage
       </p>
-      <button type="button" className="failure-home-button">
+
+      <button
+        type="button"
+        className="failure-home-button"
+        onClick={this.getRestaurantData}
+      >
         Home
       </button>
     </div>

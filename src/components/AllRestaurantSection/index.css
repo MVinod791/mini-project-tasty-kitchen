@@ -38,10 +38,11 @@
 
 .horizontal-line {
   border: 1px solid #cbd2d9;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .horizontal-line {
-    width: 100%;
+    width: 95%;
   }
 }
 .navigation-container {
@@ -121,4 +122,35 @@
   order: 0;
   flex-grow: 0;
   margin: 0px 0px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-left: 10px;
+  padding: 10px;
+}
+.search-input {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 8px;
+  padding-right: 10px;
+  border: 1px solid gray;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  font-size: 14px;
+}
+.search-button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 10px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 14px;
 }
