@@ -19,15 +19,19 @@ const CartItem = props => (
         incrementCartItemQuantity(id)
       }
 
+      const renderHeadingName = () => (
+        <h1 className="cart-item-mobile-name cart-item-mobile-name">{name}</h1>
+      )
+
       return (
         <li className="cart-item" testid="cartItem">
           <div className="cart-item-info" testid="cartItem">
             <img className="cart-product-image" src={imageUrl} alt={name} />
-            <h1 className="cart-item-desktop-name">{name}</h1>
+            <h1 className="desktop-head">{renderHeadingName()}</h1>
           </div>
 
           <div className="cart-item-details-container" testid="cartItem">
-            <h1 className="cart-item-mobile-name">{name}</h1>
+            <h1 className="mobile-head">{renderHeadingName()}</h1>
 
             <div className="cart-quantity-container">
               <button

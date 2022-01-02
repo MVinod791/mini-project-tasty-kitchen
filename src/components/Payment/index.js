@@ -18,9 +18,8 @@ const Payment = () => (
               <BsCheckCircleFill size={36} className="successful-icon" />
               <h1 className="payment-success-heading">Payment Successful</h1>
               <p className="payment-success-text">
-                Thank you for ordering
-                <br />
-                Your payment is successfully completed.
+                Thank you for ordering <br /> Your payment is successfully
+                completed.
               </p>
               <Link to="/" className="nav-link">
                 <button

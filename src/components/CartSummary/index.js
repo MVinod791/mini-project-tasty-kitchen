@@ -22,23 +22,15 @@ const CartSummary = props => {
           <>
             <div className="cart-total-responsive-container">
               <h1 className="order-total">Order Total:</h1>
-              <div className="cart-summary-container" testid="total-price">
+              <div className="cart-summary-container">
                 <p testid="total-price" className="order-total-heading">
                   <BiRupee size={24} />
-                  {total}.00
+                  {total}
                 </p>
 
                 <button
                   type="button"
-                  className="place-order-btn mobile-btn"
-                  onClick={onClickPlaceOrder}
-                >
-                  Place Order
-                </button>
-
-                <button
-                  type="button"
-                  className="place-order-btn desktop-btn"
+                  className="place-order-btn"
                   onClick={onClickPlaceOrder}
                 >
                   Place Order

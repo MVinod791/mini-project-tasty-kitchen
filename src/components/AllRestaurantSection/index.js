@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {AiOutlineLeftSquare, AiOutlineRightSquare} from 'react-icons/ai'
@@ -144,6 +144,10 @@ class AllRestaurantsSection extends Component {
     )
   }
 
+  onClickHome = () => {
+    this.getRestaurantData()
+  }
+
   renderFailureView = () => (
     <div className="restaurant-failure-view">
       <img
@@ -160,7 +164,7 @@ class AllRestaurantsSection extends Component {
       <button
         type="button"
         className="failure-home-button"
-        onClick={this.getRestaurantData}
+        onClick={this.onClickHome}
       >
         Home
       </button>

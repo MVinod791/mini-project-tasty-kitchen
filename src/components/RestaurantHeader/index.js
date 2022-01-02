@@ -14,7 +14,7 @@ const RestaurantHeader = props => {
       <div className="header-text-container">
         <h1 className="heading">Popular Restaurants</h1>
         <p className="instruction-para">
-          Select Your favorite restaurant special dish and make your day
+          Select Your favourite restaurant special dish and make your day
           happy...
         </p>
       </div>
