@@ -125,13 +125,6 @@ class AllRestaurantsSection extends Component {
     const {restaurantsList, activeOptionId} = this.state
     return (
       <>
-        <RestaurantHeader
-          sortByOptions={sortByOptions}
-          activeOptionId={activeOptionId}
-          changeSortBy={this.changeSortBy}
-        />
-        <hr className="horizontal-line" />
-        {this.renderSearchInput()}
         <ul className="restaurants-list">
           {restaurantsList.map(restaurant => (
             <RestaurantCard
@@ -215,12 +208,19 @@ class AllRestaurantsSection extends Component {
   }
 
   render() {
-    const {maxPage, currentPage} = this.state
+    const {maxPage, currentPage, activeOptionId} = this.state
     return (
       <div className="all-restaurant-section-container">
         <div className="home-container">
           <ReactSlider />
           <div className="all-restaurant-responsive-container">
+            <RestaurantHeader
+              sortByOptions={sortByOptions}
+              activeOptionId={activeOptionId}
+              changeSortBy={this.changeSortBy}
+            />
+            <hr className="horizontal-line" />
+            {this.renderSearchInput()}
             {this.renderRestaurantsList()}
             <div className="navigation-container">
               <button
