@@ -16,7 +16,6 @@ const Cart = () => (
         <>
           <Header />
           {showEmptyView ? <EmptyCartView /> : <CartListView />}
-
           <Footer />
         </>
       )

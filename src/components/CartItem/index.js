@@ -19,20 +19,18 @@ const CartItem = props => (
         incrementCartItemQuantity(id)
       }
 
-      const renderHeadingName = () => (
-        <h1 className="cart-item-mobile-name cart-item-mobile-name">{name}</h1>
-      )
+      /* const renderHeadingName = () => (
+        <h1 className="cart-item-mobile-name">{name}</h1>
+      ) */
 
       return (
         <li className="cart-item" testid="cartItem">
-          <div className="cart-item-info" testid="cartItem">
+          <div className="cart-item-info">
             <img className="cart-product-image" src={imageUrl} alt={name} />
-            <h1 className="desktop-head">{renderHeadingName()}</h1>
+            <h1 className="cart-item-mobile-name">{name}</h1>
           </div>
 
-          <div className="cart-item-details-container" testid="cartItem">
-            <h1 className="mobile-head">{renderHeadingName()}</h1>
-
+          <div className="cart-item-details-container">
             <div className="cart-quantity-container">
               <button
                 testid="decrement-quantity"
@@ -54,9 +52,9 @@ const CartItem = props => (
                 <BsPlusSquare color="#52606D" size={16} />
               </button>
             </div>
-            <p className="total-price-delete-container" testid="total-price">
+            <p className="total-price-delete-container">
               <BiRupee className="rupee-price" size={20} />
-              {cost * quantity}
+              {cost * quantity}.00
             </p>
           </div>
         </li>

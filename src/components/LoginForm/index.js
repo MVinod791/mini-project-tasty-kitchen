@@ -8,7 +8,12 @@ class LoginForm extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
-    Cookies.set('jwt_token', jwtToken, {expires: 30})
+
+    Cookies.set('jwt_token', jwtToken, {
+      expires: 30,
+      path: '/',
+    })
+
     history.replace('/')
   }
 
@@ -18,16 +23,16 @@ class LoginForm extends Component {
 
   onSubmitForm = async event => {
     event.preventDefault()
-    const url = 'https://apis.ccbp.in/login'
     const {username, password} = this.state
     const userDetails = {username, password}
+    const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(url, options)
-
     const data = await response.json()
+
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
@@ -86,13 +91,9 @@ class LoginForm extends Component {
     if (token !== undefined) {
       return <Redirect to="/" />
     }
+
     return (
       <div className="login-app-container">
-        <img
-          src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1640616796/Rectangle_1457_2x_ihnidr.png"
-          className="login-website-logo-mobile-image"
-          alt="website login"
-        />
         <div className="login-form-container">
           <form className="form" onSubmit={this.onSubmitForm}>
             <img

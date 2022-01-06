@@ -9,9 +9,9 @@ const CartSummary = props => {
     <CartContext.Consumer>
       {value => {
         const {cartList} = value
-        let total = 0
+        let totalOrderCost = 0
         cartList.forEach(eachCartItem => {
-          total += eachCartItem.cost * eachCartItem.quantity
+          totalOrderCost += eachCartItem.cost * eachCartItem.quantity
         })
 
         const onClickPlaceOrder = () => {
@@ -23,9 +23,9 @@ const CartSummary = props => {
             <div className="cart-total-responsive-container">
               <h1 className="order-total">Order Total:</h1>
               <div className="cart-summary-container">
-                <p testid="total-price" className="order-total-heading">
+                <p className="order-total-heading" testid="total-price">
                   <BiRupee size={24} />
-                  {total}
+                  {totalOrderCost}.00
                 </p>
 
                 <button
