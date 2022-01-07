@@ -147,7 +147,14 @@
 }
 @media screen and (max-width: 768px) {
   .login-image {
-    display: none;
+    order: -1;
+    width: 387px;
+    height: 387px;
+    position: static;
+    border-top-left-radius: 600px;
+    border-bottom-left-radius: 600px;
+    margin-right: -120px;
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 992px) {

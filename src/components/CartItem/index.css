@@ -36,12 +36,6 @@
   border-radius: 4px;
 }
 
-.cart-item-details-container {
-  margin-left: 16px;
-  width: 136px;
-  height: 100px;
-}
-
 @media screen and (min-width: 768px) {
   .cart-item-desktop-name {
     font-family: 'DM Sans';
@@ -59,6 +53,12 @@
   .desktop-head {
     display: none;
   }
+}
+
+.cart-item-details-container {
+  margin-left: 16px;
+  width: 136px;
+  height: 100px;
 }
 @media screen and (min-width: 768px) {
   .cart-item-details-container {
@@ -82,6 +82,11 @@
   .cart-item-mobile-name {
     font-size: 18px;
     margin-left: 10px;
+    margin-right: -80px;
+    align-self: flex-start;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
   }
 }
 

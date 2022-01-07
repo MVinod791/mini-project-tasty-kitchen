@@ -111,7 +111,6 @@ class LoginForm extends Component {
             </button>
           </form>
         </div>
-
         <img
           src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967615/Rectangle_1456_eke7rc.png"
           alt="website login"
