@@ -110,6 +110,7 @@ class AllRestaurantsSection extends Component {
           value={searchInput}
           onChange={this.onChangeSearchInput}
         />
+        <hr className="search-vertical-line" />
         <button
           type="button"
           className="search-button"
