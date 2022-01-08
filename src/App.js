@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {Switch, Route, BrowserRouter, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 import CartContext from './context/CartContext'
 
@@ -95,7 +95,7 @@ class App extends Component {
     const {cartList} = this.state
     localStorage.setItem('cartData', JSON.stringify(cartList))
     return (
-      <BrowserRouter>
+      <>
         <CartContext.Provider
           value={{
             cartList,
@@ -119,7 +119,7 @@ class App extends Component {
             <Redirect to="/bad-path" />
           </Switch>
         </CartContext.Provider>
-      </BrowserRouter>
+      </>
     )
   }
 }

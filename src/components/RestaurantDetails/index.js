@@ -41,6 +41,7 @@ class RestaurantDetails extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const fetchedData = await response.json()
+      console.log(fetchedData)
       const updatedData = {
         id: fetchedData.id,
         costForTwo: fetchedData.cost_for_two,
@@ -61,7 +62,7 @@ class RestaurantDetails extends Component {
           rating: eachFood.rating,
         })),
       }
-      // console.log(updatedData)
+      console.log(updatedData)
       this.setState({
         restaurantDetails: updatedData,
         apiStatus: apiStatusConstants.success,

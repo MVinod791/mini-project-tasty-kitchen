@@ -122,7 +122,7 @@ class AllRestaurantsSection extends Component {
   }
 
   renderRestaurantsView = () => {
-    const {restaurantsList, activeOptionId} = this.state
+    const {restaurantsList} = this.state
     return (
       <>
         <ul className="restaurants-list">
