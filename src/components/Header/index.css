@@ -28,7 +28,7 @@
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 32px;
   margin-left: 15px;
 }
@@ -36,6 +36,7 @@
 @media screen and (min-width: 768px) {
   .taste-kitchen-heading {
     font-size: 28px;
+    font-weight: bold;
   }
 }
 
@@ -44,9 +45,16 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 0px;
-  max-width: 1200px;
+
   margin-left: 0px;
-  width: 90%;
+  width: 95%;
+  max-width: 1100px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-desktop-container {
+    width: 90%;
+  }
 }
 
 .nav-menu {
@@ -54,7 +62,6 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
   flex: 1;
   list-style-type: none;
   margin-top: 0px;
@@ -113,6 +120,7 @@
   color: #231f20;
   display: flex;
   justify-content: flex-end;
+  align-self: flex-end;
 }
 
 @media screen and (min-width: 768px) {

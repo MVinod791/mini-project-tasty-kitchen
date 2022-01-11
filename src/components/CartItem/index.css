@@ -50,7 +50,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .desktop-head {
+  .cart-item-desktop-name {
     display: none;
   }
 }
@@ -80,13 +80,7 @@
 }
 @media screen and (min-width: 768px) {
   .cart-item-mobile-name {
-    font-size: 18px;
-    margin-left: 10px;
-    margin-right: -80px;
-    align-self: flex-start;
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
+    display: none;
   }
 }
 

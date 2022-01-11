@@ -27,10 +27,11 @@ const CartItem = props => (
         <li className="cart-item" testid="cartItem">
           <div className="cart-item-info">
             <img className="cart-product-image" src={imageUrl} alt={name} />
-            <h1 className="cart-item-mobile-name">{name}</h1>
+            <h1 className="cart-item-desktop-name">{name}</h1>
           </div>
 
           <div className="cart-item-details-container">
+            <h1 className="cart-item-mobile-name">{name}</h1>
             <div className="cart-quantity-container">
               <button
                 testid="decrement-quantity"

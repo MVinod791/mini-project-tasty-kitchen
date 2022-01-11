@@ -21,9 +21,11 @@ const Footer = () => (
       The only thing we are serious about is food. Contact us on
     </p>
     <div className="contact-icons-container">
-      <button type="button" className="contact-icons pinterest">
-        <FaPinterestSquare size={32} testid="pintrest-social-icon" />
-      </button>
+      <FaPinterestSquare
+        testid="pintrest-social-icon"
+        className="contact-icons pinterest"
+      />
+
       <FaInstagram
         size={40}
         testid="instagram-social-icon"

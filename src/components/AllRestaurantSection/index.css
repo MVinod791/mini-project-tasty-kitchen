@@ -3,12 +3,12 @@
   justify-content: center;
 }
 .home-container {
-  width: 80%;
+  width: 100%;
+  max-width: 1100px;
 }
 @media screen and (min-width: 768px) {
   .home-container {
     width: 90%;
-    max-width: 1100px;
   }
 }
 
@@ -22,7 +22,6 @@
 .restaurants-list {
   list-style-type: none;
   padding-left: 0px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -31,14 +30,14 @@
 
 @media screen and (min-width: 768px) {
   .restaurants-list {
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 0px;
   }
 }
 
 .horizontal-line {
   border: 1px solid #cbd2d9;
-  width: 100%;
+  width: 80%;
 }
 @media screen and (min-width: 768px) {
   .horizontal-line {
@@ -128,14 +127,15 @@
   align-items: center;
   justify-content: flex-start;
   align-self: flex-start;
-  margin-left: 10px;
+  margin-left: 40px;
   border: 1px solid #cbd2d9;
   height: 34px;
-  width: 90%;
+  width: 50%;
 }
 @media screen and (min-width: 768px) {
   .search-container {
     width: 40%;
+    margin-left: 25px;
   }
 }
 .search-input {
