@@ -19,6 +19,7 @@ class RestaurantDetails extends Component {
   state = {
     restaurantDetails: {},
     apiStatus: apiStatusConstants.initial,
+    date: new Date(),
   }
 
   componentDidMount() {
@@ -73,15 +74,14 @@ class RestaurantDetails extends Component {
   }
 
   renderRestaurantDetailsView = () => {
-    const {restaurantDetails} = this.state
+    const {restaurantDetails, date} = this.state
     const {
       costForTwo,
       cuisine,
       imageUrl,
-
       location,
       name,
-
+      opensAt,
       rating,
       reviewsCount,
       foodItems,
@@ -95,6 +95,15 @@ class RestaurantDetails extends Component {
               <h1 className="restaurant-name">{name}</h1>
               <p className="cuisine-para">{cuisine}</p>
               <p className="location">{location}</p>
+              {date.getHours() > 9 && date.getHours() < 21 ? (
+                <p className="cost-for-two-text">
+                  <span className="open">Open</span>. Closes 9:00 PM
+                </p>
+              ) : (
+                <p className="cost-for-two-text">
+                  <span className="closed">Closed: </span>Opens At {opensAt}
+                </p>
+              )}
               <div className="rating-and-cost-container">
                 <div className="reviews-rating-container">
                   <div className="rating-container">

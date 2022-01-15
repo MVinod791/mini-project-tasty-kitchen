@@ -11,12 +11,11 @@
 }
 @media screen and (min-width: 768px) {
   .restaurant-banner-container {
-    padding: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
     margin-top: 20px;
+    margin-bottom: 30px;
   }
 }
 .banner-responsive-container {
@@ -202,6 +201,7 @@
   list-style-type: none;
   width: 90%;
   padding-left: 0px;
+  margin-top: 30px;
 }
 @media screen and (min-width: 768px) {
   .food-item-list {
@@ -210,6 +210,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-top: 30px;
   }
 }
 
@@ -276,4 +277,16 @@
   justify-content: center;
   font-weight: bold;
   margin-top: 48px;
+}
+
+.closed {
+  color: #fa0707;
+  font-weight: bold;
+  font-size: 16px;
+}
+.open {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 6px;
 }
