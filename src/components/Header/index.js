@@ -35,7 +35,7 @@ const Header = props => {
               className="kitchen-icon"
             />
           </Link>
-          <h1 className="taste-kitchen-heading">Tasty Kitchens</h1>
+          <h1 className="kitchen-heading">Tasty Kitchens</h1>
         </div>
 
         <ul className="nav-menu">

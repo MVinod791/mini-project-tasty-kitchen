@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .login-app-container {
     flex-direction: row;
     justify-content: space-between;
@@ -145,19 +145,22 @@
   border-radius: 2px;
   margin-bottom: 5px;
 }
+
 @media screen and (max-width: 768px) {
   .login-image {
     order: -1;
     width: 387px;
     height: 387px;
-    position: static;
-    border-top-left-radius: 600px;
-    border-bottom-left-radius: 600px;
-    margin-right: -120px;
+
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
     margin-left: 20px;
+    flex-shrink: 1;
+    display: block;
   }
 }
-@media screen and (min-width: 992px) {
+
+@media screen and (min-width: 768px) {
   .login-image {
     width: 40%;
     flex-shrink: 1;

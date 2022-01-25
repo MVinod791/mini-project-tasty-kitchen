@@ -63,7 +63,7 @@ class RestaurantDetails extends Component {
           rating: eachFood.rating,
         })),
       }
-      console.log(updatedData)
+
       this.setState({
         restaurantDetails: updatedData,
         apiStatus: apiStatusConstants.success,
@@ -71,6 +71,12 @@ class RestaurantDetails extends Component {
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
+  }
+
+  call = () => {
+    setInterval(() => {
+      this.setState({date: new Date()})
+    }, 1000)
   }
 
   renderRestaurantDetailsView = () => {
@@ -95,15 +101,17 @@ class RestaurantDetails extends Component {
               <h1 className="restaurant-name">{name}</h1>
               <p className="cuisine-para">{cuisine}</p>
               <p className="location">{location}</p>
-              {date.getHours() > 9 && date.getHours() < 21 ? (
-                <p className="cost-for-two-text">
-                  <span className="open">Open</span>. Closes 9:00 PM
+              {date.getHours() > 9 && date.getHours() < 22 ? (
+                <p className="time">
+                  <span className="open">Open</span>. Closes 10:00 PM
                 </p>
               ) : (
-                <p className="cost-for-two-text">
+                <p className="time">
                   <span className="closed">Closed: </span>Opens At {opensAt}
                 </p>
               )}
+
+              {this.call()}
               <div className="rating-and-cost-container">
                 <div className="reviews-rating-container">
                   <div className="rating-container">

@@ -1,13 +1,15 @@
 .slider-container {
   display: flex;
   justify-content: center;
+  justify-content: center;
   margin-top: 20px;
   list-style-type: none;
   padding-left: 0px;
+  margin-left: 0px;
 }
 .carousel {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 .image-container {
   width: 100%;
