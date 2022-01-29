@@ -85,7 +85,8 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {showErrorMsg, errorMsg} = this.state
+    const {showErrorMsg, errorMsg, username} = this.state
+    localStorage.setItem('username', JSON.stringify(username))
     const token = Cookies.get('jwt_token')
     if (token !== undefined) {
       return <Redirect to="/" />

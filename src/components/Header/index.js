@@ -7,6 +7,16 @@ import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
 import './index.css'
 
+const initialContainerBackgroundClassNames = [
+  'amber',
+  'blue',
+  'orange',
+  'emerald',
+  'teal',
+  'red',
+  'light-blue',
+]
+
 const Header = props => {
   const onClickLogout = () => {
     Cookies.remove('jwt_token')
@@ -24,19 +34,41 @@ const Header = props => {
     return '#334155'
   }
 
+  const renderProfile = () => {
+    const details = localStorage.getItem('username')
+    const name = JSON.parse(details)
+    const initial = name[0].toUpperCase()
+    const initialColorName = `initial-container ${
+      initialContainerBackgroundClassNames[
+        Math.ceil(
+          Math.random() * initialContainerBackgroundClassNames.length - 1,
+        )
+      ]
+    }`
+    return (
+      <div className="profile-card">
+        <div className={initialColorName}>
+          <p className="initials">{initial}</p>
+        </div>
+        <h1 className="name2">{name}</h1>
+      </div>
+    )
+  }
+
   return (
     <nav className="nav-header">
       <div className="nav-desktop-container">
-        <div className="logo-name-container">
-          <Link to="/">
+        <Link to="/" className="nav-link">
+          <div className="logo-name-container">
             <img
               src="https://res.cloudinary.com/dwiulfw8t/image/upload/v1636967825/Frame_274_2x_lghjt2.png"
               alt="website logo"
               className="kitchen-icon"
             />
-          </Link>
-          <h1 className="kitchen-heading">Tasty Kitchens</h1>
-        </div>
+
+            <h1 className="kitchen-heading">Tasty Kitchens</h1>
+          </div>
+        </Link>
 
         <ul className="nav-menu">
           <li className="nav-menu-item">
@@ -57,7 +89,7 @@ const Header = props => {
               Cart
             </Link>
           </li>
-          <li>
+          <li className="nav-menu-item">
             <button
               type="button"
               className="logout-desktop-btn"
@@ -65,6 +97,11 @@ const Header = props => {
             >
               Logout
             </button>
+          </li>
+          <li className="nav-menu-item">
+            <Link to="/profile" className="nav-link cart">
+              {renderProfile()}
+            </Link>
           </li>
         </ul>
         <Popup
@@ -97,6 +134,11 @@ const Header = props => {
                 >
                   Logout
                 </button>
+                <li className="nav-menu-item">
+                  <Link to="/profile" className="nav-link cart">
+                    {renderProfile()}
+                  </Link>
+                </li>
               </div>
               <button type="button" className="close-btn">
                 <AiOutlineCloseCircle size={18} onClick={() => close()} />
